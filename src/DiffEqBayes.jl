@@ -1,5 +1,5 @@
 module DiffEqBayes
-using DiffEqBase, Distributions, Turing, MacroTools, Mamba
+using DiffEqBase, Distributions, Turing, MacroTools, Mamba, Stheno
 using ParameterizedFunctions, RecursiveArrayTools
 using Parameters, Distributions, Optim, Requires
 using Distances, ApproxBayes
@@ -27,6 +27,10 @@ function __init__()
     @require StatsPlots="f3b207a7-027a-5e70-b257-86293d7955fd" begin
         include("utils.jl")
         export plot_chain
+    end
+    @require Stheno="8188c328-b5d6-583d-959b-9690869a5511" begin
+      include("gp_inference.jl")
+      export gp_inference
     end
 end
 
