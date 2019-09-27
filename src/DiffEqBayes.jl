@@ -28,10 +28,10 @@ function __init__()
         include("utils.jl")
         export plot_chain
     end
-    @require Stheno="8188c328-b5d6-583d-959b-9690869a5511" begin
-      include("gp_inference.jl")
-      export gp_inference
-    end
+    # @require Stheno="8188c328-b5d6-583d-959b-9690869a5511" begin
+    #   include("gp_inference.jl")
+    #   export gp_inference
+    # end
 end
 
 export turing_inference, abc_inference
