@@ -13,7 +13,7 @@ function gp_inference(prob::DiffEqBase.DEProblem,t,data,phi_function::Stheno.Mea
     θ = GP(theta_function, theta_kernel)
     x = x_given_phi(phi)
     f = prob.f
-    ẋ = prob.f(x, ϕ)
+    ẋ = prob.f(x, θ)
     y = x + GP(Noise()) * sigma
     # x, ẋ involves data somehow
 
